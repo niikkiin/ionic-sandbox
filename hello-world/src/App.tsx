@@ -1,17 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
-import { IonButton } from '@ionic/react';
+import { IonButton, IonToast } from '@ionic/react';
 
 function App() {
+  const [showToast, setShowToast] = useState<boolean>(false);
+
+  const handleClick = (): void => {
+    setShowToast(true);
+    setTimeout(() => {
+      setShowToast(false);
+    }, 1500);
+  };
+
   return (
     <div className='App'>
       <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <IonButton>Learn React</IonButton>
+        <IonButton onClick={handleClick}>Click Me</IonButton>
+        <IonToast isOpen={showToast} message='Hello world!'></IonToast>
       </header>
     </div>
   );
