@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
-import './App.css';
-import { IonButton, IonIcon, IonToast } from '@ionic/react';
+import {
+  IonApp,
+  IonButton,
+  IonContent,
+  IonHeader,
+  IonIcon,
+  IonTitle,
+  IonToast,
+  IonToolbar,
+} from '@ionic/react';
 
 // icons
 import { play as playIcon } from 'ionicons/icons';
@@ -16,15 +24,20 @@ function App() {
   };
 
   return (
-    <div className='App'>
-      <header className='App-header'>
+    <IonApp>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>My App</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent className='ion-padding'>
         <IonButton onClick={handleClick}>
           <IonIcon icon={playIcon} slot='start' />
           Click Me
         </IonButton>
         <IonToast isOpen={showToast} message='Hello world!'></IonToast>
-      </header>
-    </div>
+      </IonContent>
+    </IonApp>
   );
 }
 

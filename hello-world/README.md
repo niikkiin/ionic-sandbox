@@ -98,7 +98,7 @@ function App() {
 - Other Props
   - ** Slot _(start, end, icon-only)_ ** - location of the icon where it will be displayed
 
-### Theming Customization
+### Section 6 Theming Customization
 
 - Ionic has a [color generator](https://ionicframework.com/docs/theming/color-generator)
 - To start customizing:
@@ -109,5 +109,28 @@ function App() {
     ```ts
     import 'theme/variables.css';
     ```
-    Note 1: Variable css file must be below the `core.css` to override the styles
+    Note 1: Variable css file must be below the `core.css` to override the styles <br/>
     Note 2: I use absolute imports meaning `theme/variables.css` is also equivalent to `./theme/variables.css`
+
+### Section 7 Full-Page Ionic Apps
+
+- There are other css files that can be imported to make your app look more like a native application
+- It is ideal to make all your components an Ion component
+
+```js
+/* Core CSS required for Ionic components to work properly */
+import '@ionic/react/css/core.css';
+
+/* Basic CSS for apps built with Ionic */
+import '@ionic/react/css/normalize.css';
+import '@ionic/react/css/structure.css';
+import '@ionic/react/css/typography.css';
+
+/* Optional CSS utils that can be commented out */
+import '@ionic/react/css/padding.css';
+import '@ionic/react/css/float-elements.css';
+import '@ionic/react/css/text-alignment.css';
+import '@ionic/react/css/text-transformation.css';
+import '@ionic/react/css/flex-utils.css';
+import '@ionic/react/css/display.css';
+```
