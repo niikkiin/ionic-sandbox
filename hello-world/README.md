@@ -2,7 +2,7 @@
 
 - To setup:
 
-  - Create your application and navigate to it
+  - Create your application and navigate to `my-app-name` directory
 
   ```zsh
   npx create-react-app my-app-name --template typescript
@@ -16,14 +16,14 @@
 ### Section 2 Adding ionic to react project
 
 - In your terminal, install ionic
-  - ```ts
+  - ```zsh
     npm install @ionic/react
     ```
 - Add ionic css files to index.tsx
   - ```ts
     import '@ionic/react/css/core.css';
     ```
-- To check if working, add an IonButton in App.tsx
+- To check if working, add an IonButton in `App.tsx`
 
   - ```ts
     import { IonButton } from '@ionic/react';
@@ -97,3 +97,17 @@ function App() {
 
 - Other Props
   - ** Slot _(start, end, icon-only)_ ** - location of the icon where it will be displayed
+
+### Theming Customization
+
+- Ionic has a [color generator](https://ionicframework.com/docs/theming/color-generator)
+- To start customizing:
+  - Create a new folder called `theme` inside `src` folder
+  - Create a file inside `theme` folder called `variables.css`
+  - Copy all newly generated variables from the color generator inside the `variables.css` file
+  - Import the file to `index.tsx`
+    ```ts
+    import 'theme/variables.css';
+    ```
+    Note 1: Variable css file must be below the `core.css` to override the styles
+    Note 2: I use absolute imports meaning `theme/variables.css` is also equivalent to `./theme/variables.css`

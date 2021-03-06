@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import '@ionic/react/css/core.css';
+import 'theme/variables.css';
 
 ReactDOM.render(
   <React.StrictMode>
