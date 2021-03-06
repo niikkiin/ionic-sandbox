@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
-import { IonButton, IonToast } from '@ionic/react';
+import { IonButton, IonIcon, IonToast } from '@ionic/react';
+
+// icons
+import { play as playIcon } from 'ionicons/icons';
 
 function App() {
   const [showToast, setShowToast] = useState<boolean>(false);
@@ -15,7 +18,10 @@ function App() {
   return (
     <div className='App'>
       <header className='App-header'>
-        <IonButton onClick={handleClick}>Click Me</IonButton>
+        <IonButton onClick={handleClick}>
+          <IonIcon icon={playIcon} slot='start' />
+          Click Me
+        </IonButton>
         <IonToast isOpen={showToast} message='Hello world!'></IonToast>
       </header>
     </div>

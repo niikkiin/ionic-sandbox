@@ -4,30 +4,33 @@
 
   - Create your application and navigate to it
 
-  ```
+  ```zsh
   npx create-react-app my-app-name --template typescript
 
   cd my-app-name
   ```
 
-  - Install packages
-
-  `npm i`
-
-- To run the project:
-  - `npm start`
+  - Install packages using `npm i`
+  - Run the project using `npm start`
 
 ### Section 2 Adding ionic to react project
 
 - In your terminal, install ionic
-  - `npm install @ionic/react`
-- Add ionic css files to index.js
-  - `import '@ionic/react/css/core.css';`
+  - ```ts
+    npm install @ionic/react
+    ```
+- Add ionic css files to index.tsx
+  - ```ts
+    import '@ionic/react/css/core.css';
+    ```
 - To check if working, add an IonButton in App.tsx
 
   - ```ts
     import { IonButton } from '@ionic/react';
-    <IonButton>Click Me</IonButton>;
+
+    function Example() {
+      return <IonButton>Click Me</IonButton>;
+    }
     ```
 
 ### Section 3 Toast Messages
@@ -67,3 +70,30 @@ function App() {
       mode: 'ios', // ios or md
     });
     ```
+
+### Section 5 Ionicons
+
+- Ionic provides a set of icons called
+  [Ionicons](https://ionicons.com/)
+- Install ionicons
+  ```zsh
+  npm install ionicons
+  ```
+- Usage
+
+  ```ts
+  import { IonButton, IonIcon } from '@ionic/react';
+  import { play as playIcon } from 'ionicons/icons';
+
+  function Example() {
+    return (
+      <IonButton onClick={handleClick}>
+        <IonIcon icon={playIcon} slot='start' />
+        Click Me
+      </IonButton>
+    );
+  }
+  ```
+
+- Other Props
+  - ** Slot _(start, end, icon-only)_ ** - location of the icon where it will be displayed
